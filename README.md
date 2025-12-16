@@ -147,16 +147,40 @@
 ## 🚀 部署说明
 
 ### 环境要求
-- 阿里云函数计算服务
+- Python 3.7+
 - 302.ai API账号（Unifuns + Gemini + Nano Banana）
+- 云服务提供商（支持腾讯云SCF、阿里云FC等）
 
-### 快速部署
-1. 将 `multi_handler.py` 打包上传到阿里云函数
-2. 配置环境变量（API密钥和端点）
-3. 设置CORS白名单
-4. 更新前端代理地址
+### 快速开始
 
-详细部署步骤请参考项目文档。
+#### 本地测试
+1. 复制 `.env.example` 为 `.env` 并配置API密钥
+2. 运行 `./start_local.sh` 启动本地代理服务器
+3. 使用HTTP服务器打开 `index.html` 进行测试
+
+#### 服务器部署
+
+**腾讯云函数计算（推荐）**
+1. 使用 `scf_handler.py` 作为入口文件
+2. 参考 `DEPLOY_TENCENT.md` 完成部署
+3. 配置API网关触发器
+4. 更新前端配置中的生产环境地址
+
+**阿里云函数计算**
+1. 使用 `multi_handler.py` 作为入口文件
+2. 参考 `DEPLOY.md` 完成部署
+
+详细部署步骤请参考对应的部署文档：
+- 腾讯云：`DEPLOY_TENCENT.md`
+- 阿里云：`DEPLOY.md`
+
+---
+
+## 📖 部署文档
+
+- **快速开始**: 查看 [README_DEPLOY.md](./README_DEPLOY.md)
+- **腾讯云部署**: 查看 [DEPLOY_TENCENT.md](./DEPLOY_TENCENT.md)
+- **阿里云部署**: 查看 [DEPLOY.md](./DEPLOY.md)
 
 ---
 
